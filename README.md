@@ -13,13 +13,13 @@ ZTF uses a new robotic camera with a 47 square degree field of view mounted on t
 + Physics of Supernovae & Relativistic Explosions 
 + Andromeda Galaxy
 
+### Make Alerts Really Simple (MARS)
+MARS provides access to all public alerts issued by ZTF since the start of the public alert stream on June 1, 2018. Alerts can be accessed by using the [website](https://mars.lco.global/) or the API they have set up.
+
 ## Etelman Observatory & VIRT
 Located in St. Thomas, USVI, the Etelman Observatory is just about ready to do high quality science with our half meter optical robotic telescope named the Virgin Islands Robotic Telescope. We are located in an area where there are not a lot of professional telescopes. 
 Using VIRT at Etelman we are interested in following up on all of the ZTF science goals, especially Tidal Disruption Events, Stellar Astrophyiscs, Physics of Supernovae & Relativistic Explosions, and Solar System Bodies. We want to contribute to these events by following up on candidates, especially for those in portions of the sky not available to telescopes in North or South America. 
 
-
-### Make Alerts Really Simple (MARS)
-MARS provides access to all public alerts issued by ZTF since the start of the public alert stream on June 1, 2018. Alerts can be accessed by using the [website](https://mars.lco.global/) or the API they have set up.
 
 ## Acessing Alerts using the MARS API 
 In my python based code you can see how I have utilized the MARS API to download the most recent transient candidates from ZTF.
