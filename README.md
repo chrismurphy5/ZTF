@@ -2,7 +2,7 @@
 
 ## ZTF Background
 
-ZTF uses a new robotic camera with a 47 square degree field of view mounted on the Samuel Oschin 48-inch Schmidt telescope. 47 degrees is an unprecedented amount of sky view! Thats the equivalent sky area of 247 full moons! With such a large field of view, ZTF will capture hundreds of thousands of stars and galaxies in a single shot. ZTF will view 3750 square degrees per hour.
+ZTF uses a new robotic camera with a 47 square degree field of view mounted on the Samuel Oschin 48-inch Schmidt telescope. 47 degrees is an unprecedented amount of sky view! Thats the equivalent sky area of 247 full moons! With such a large field of view, ZTF will capture hundreds of thousands of stars and galaxies in a single shot. Every night, ZTF will observe 3750 square degrees per hour.
 
 ### ZTF Science Goals
 + Active Galactic Nucleii & Tidal Disruption Events
@@ -31,4 +31,5 @@ The whole purpose of downloading the most recent transients from ZTF is so that 
 
 
 
-Chris Murphy, Physics major at the University of the Virgin Islands, christopher.murphy@uvi.edu
+Chris Murphy, Physics major at the University of the Virgin Islands.
+christopher.murphy@uvi.edu
