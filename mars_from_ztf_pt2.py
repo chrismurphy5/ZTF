@@ -8,7 +8,7 @@ from astropy.coordinates import EarthLocation,SkyCoord
 from astropy.time import Time
 from astropy import units as u
 from astropy.coordinates import AltAz
-import numpy as np
+import matplotlib.pyplot as plt
 
 #Today at 7 pm (ast) = 11pm UTC
 #Current strategy at Etelman is to observe from ~7-11 pm
@@ -65,35 +65,80 @@ df1 = df_transposed[['filter','ra','dec','candid','magap','magpsf','distnr','cla
 
 ra = df1['ra'].tolist()
 dec = df1['dec'].tolist()
-print ra, dec
-print len(ra), len(dec)
+candid = df1['candid'].tolist()
+print ra, dec, candid
+print len(ra), len(dec), len(candid)
 
 
 four_hours_in_minutes = list(range(4*60)) # 0 - (4*60) consecutive numbers
 time_change = four_hours_in_minutes*u.minute # let astropy know that every number represents a minut
 
 
-for r, d in zip(ra, dec):
+candidate_az_alt = {}
+
+for i, r, d in zip(candid, ra, dec):
+	az = []
+	alt = []
+	az_alt_dict = {}
 	for x in time_change:
 		time = observing_time + x # add one minute
-		print time , az_alt(time, r, d)
+		azimuth , altitude = az_alt(time, r, d)
+		az.append(float(azimuth))
+		alt.append(float(altitude))
+		az_alt_dict['azimuth'] = az 
+		az_alt_dict['altitude'] = alt
+	print az_alt_dict
+	candidate_az_alt[i] =  az_alt_dict
 	print '\n'
+
+print candidate_az_alt
+
+for k, v in candidate_az_alt.items():
+	plt.scatter(four_hours_in_minutes, v['altitude'])
+	plt.title(str(k) + 'Altitude vs Time during Observation Hours')
+	plt.ylabel('Altitude')
+	plt.xlabel('Minutes after 7pm ' + today)
+	plt.savefig(str(k) + '.png')
+	plt.clf()
+
+
 
 
 '''
 Accomplished this week:
 	For every candidate, convert RA/DEC to alt az at Etelman
 		Find az alt once a minute from 7pm to 11pm
+		Create a plot of how the candidate rises and falls
 
 
 Next steps:
 	Ensure that Astropy is converting RA/DEC to AZ/Alt properly
 	For every candidate, find when it will be highest in the sky
-		Maybe create a plot of how the candidate rises and falls
-
+		Show this in the candidates altitude vs time plot
+		Create table: cand id , ra , dec, time of highest point, alt at highest point, az at highest point
 	Also: combine mars from ztf.py with pt2 into one script
 	
 '''
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
