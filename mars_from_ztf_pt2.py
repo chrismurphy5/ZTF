@@ -10,6 +10,14 @@ from astropy import units as u
 from astropy.coordinates import AltAz
 import numpy as np
 
+#Today at 7 pm (ast) = 11pm UTC
+#Current strategy at Etelman is to observe from ~7-11 pm
+now = Time.now()
+print now
+now_str = str(now)
+today = now_str.split(' ')[0]
+today_7 = today + ' 23:00:00'
+observing_time = Time(today_7)  
 
 
 observing_location = EarthLocation(lat='18.3381', lon='-64.8941', height=500*u.m) 
