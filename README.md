@@ -31,5 +31,7 @@ The whole purpose of downloading the most recent transients from ZTF is so that 
 
 
 
-Chris Murphy, Physics major at the University of the Virgin Islands.
-christopher.murphy@uvi.edu
+Chris Murphy, Physics major at the University of the Virgin Islands
+
+
+christopher.murphy@students.uvi.edu
