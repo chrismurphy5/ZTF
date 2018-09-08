@@ -93,8 +93,18 @@ for i, r, d in zip(candid, ra, dec):
 
 print candidate_az_alt
 
+
+#Create a table of candidate info
+
+
 for k, v in candidate_az_alt.items():
+	max_alt = max(v['altitude'])
+	maxindex = v['altitude'].index(max_alt)
+	max_time = four_hours_in_minutes[maxindex]
 	plt.scatter(four_hours_in_minutes, v['altitude'])
+	plt.scatter(max_time, max_alt)
+	plt.annotate(str(max_alt) + ' occurs at ' + str(max_time), xy=(max_time, max_alt), xytext = (max_time, max_alt - 10))
+	plt.ylim(0, 90)
 	plt.title(str(k) + 'Altitude vs Time during Observation Hours')
 	plt.ylabel('Altitude')
 	plt.xlabel('Minutes after 7pm ' + today)
@@ -109,12 +119,13 @@ Accomplished this week:
 	For every candidate, convert RA/DEC to alt az at Etelman
 		Find az alt once a minute from 7pm to 11pm
 		Create a plot of how the candidate rises and falls
+		For every candidate, find when it will be highest in the sky
+			Show this in plot (needs work (very sloppy at the moment))
+			
 
 
 Next steps:
 	Ensure that Astropy is converting RA/DEC to AZ/Alt properly
-	For every candidate, find when it will be highest in the sky
-		Show this in the candidates altitude vs time plot
 		Create table: cand id , ra , dec, time of highest point, alt at highest point, az at highest point
 	Also: combine mars from ztf.py with pt2 into one script
 	
