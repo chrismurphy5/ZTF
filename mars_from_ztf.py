@@ -13,6 +13,8 @@ yesterday = str(yesterday)
 yesterday = yesterday.split(' ')[0]
 
 
+
+
 params = (
     ('sort_value', 'jd'), 
     ('sort_order', 'desc'), #Sort the jd in descending order (most recent comes first)
@@ -26,9 +28,13 @@ params = (
 response = requests.get('https://mars.lco.global/', params=params)
 
 
+
+
+#Naming convention of file
+json_downloaded_file = today + '_ztf_interesting_candidates.txt'
+
 #write the results of our query to a filename
-filename = 'query_results1.txt'
-file = open(filename, 'w+') 
+file = open(json_downloaded_file, 'w+') 
 file.write(response.content) 
 file.close
 
